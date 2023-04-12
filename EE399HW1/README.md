@@ -331,7 +331,7 @@ We generated six 2D loss landscapes by fixing two parameters of the model f(x) =
 
 The 2D loss landscape graph visualizes the complex interaction between different parameters and their impact on the loss function. It shows the variation in the loss function as we sweep through different combinations of two fixed parameters and two swept parameters, with darker shades indicating higher loss values and lighter shades indicating lower loss values. The minima in the loss landscape correspond to the optimal values of the parameters that result in the lowest possible loss. By observing the number of minima, we can understand the complexity of the optimization problem and select suitable optimization algorithms and initial parameter values to improve the convergence rate and avoid local minima.
 
-![Sweep through values of A and B](./EE399HW1/ABloss.png)
+![Sweep through values of A and B](https://raw.githubusercontent.com/tuongv-1736461/EE399/main/EE399HW1/ABloss.png)
 
 ![Sweep through values of A and D](/tuongv-1736461/EE399/EE399HW1/ADloss.png)
 
