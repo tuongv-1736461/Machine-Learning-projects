@@ -331,22 +331,21 @@ We generated six 2D loss landscapes by fixing two parameters of the model f(x) =
 
 The 2D loss landscape graph visualizes the complex interaction between different parameters and their impact on the loss function. It shows the variation in the loss function as we sweep through different combinations of two fixed parameters and two swept parameters, with darker shades indicating higher loss values and lighter shades indicating lower loss values. The minima in the loss landscape correspond to the optimal values of the parameters that result in the lowest possible loss. By observing the number of minima, we can understand the complexity of the optimization problem and select suitable optimization algorithms and initial parameter values to improve the convergence rate and avoid local minima.
 
-![Sweep through values of A and B](https://github.com/tuongv-1736461/EE399/raw/main/EE399HW1/ABloss.png)[ABloss](https://user-images.githubusercontent.com/104536898/231589531-921ce11c-3c35-4005-a488-eeb3a6ae78e0.png)
+![ABloss](https://user-images.githubusercontent.com/104536898/231589531-921ce11c-3c35-4005-a488-eeb3a6ae78e0.png)
 
-![Sweep through values of A and D](/tuongv-1736461/EE399/EE399HW1/ADloss.png)
+![ADloss](https://user-images.githubusercontent.com/104536898/231590173-0c4c52c7-f8c7-49d5-8d8c-31daf313a02a.png)
 
 In the A vs B landscape, we observed a dark vertical line at 0, indicating that A is independent of B. A is minimum at 0, while B is minimum at all values of B. In contrast, the A vs D landscape showed a dark circle in the middle of the graph, indicating that both A and D affect the error. The minimum error was observed when A is 0 and D is 30.
 
-![Sweep through values of C and D](/tuongv-1736461/EE399/EE399HW1/CDloss.png)!
-
+![CDloss](https://user-images.githubusercontent.com/104536898/231590673-9cfbf219-6af0-4bed-b1dd-1920fde139c6.png)
 
 We observed a dark horizontal line at 30 in the C vs D landscape, indicating that D is independent of C. This occurs because D is minimum at 30, while C is minimum at all values of C.
 
-![Sweep through values of A and C](/tuongv-1736461/EE399/EE399HW1/ACloss.png)
+![ACloss](https://user-images.githubusercontent.com/104536898/231590015-a96c1616-19b5-4710-9a85-14b169dd3f2e.png)
 
-![Sweep through values of B and C](/tuongv-1736461/EE399/EE399HW1/BCloss.png)
+![BCloss](https://user-images.githubusercontent.com/104536898/231590376-dcf607d3-5a23-4b6d-b014-ef4c22418988.png)
 
-![Sweep through values of B and D](/tuongv-1736461/EE399/EE399HW1/BDloss.png)
+![BDloss](https://user-images.githubusercontent.com/104536898/231590509-977ff209-22ee-4003-ab59-17672ff9bb62.png)
 
 The A vs C and B vs C landscapes both displayed dark horizontal lines at 0, revealing that C is independent of A and B, respectively. In contrast, the B vs D landscape showed a dark horizontal line at 30, indicating that D is independent of B. In this case, D is minimum at 30, while B is minimum at all values of B.
 
