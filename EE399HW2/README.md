@@ -1,5 +1,5 @@
 
-# Project Title
+# Application of Machine Learning: Eigenfaces
 
 ## Abstract:
 In this assignment, we work with a dataset of 2414 grayscale images of 39 different faces, each downsampled to 32x32 pixels and stored as columns in a matrix X of size 1024x2414. We perform various operations on the dataset, including computing correlation matrices, finding eigenvectors and principal component directions, and calculating the percentage of variance captured by the first six SVD modes. By analyzing the correlation matrices, we identify the most and least correlated images. Additionally, we obtain the eigenfaces which capture the most significant variations in the dataset. This assignment provides an introduction to applications of machine learning in facial recognition.
@@ -190,25 +190,21 @@ plt.show()
 ```
 
 
-
-
-
-
-
-
-
 ## Computational Results
 #### Part a: The correlation matrix between the first 100 images in matrix X 
 
-insert 1 image 
+![C_matrix_100](https://user-images.githubusercontent.com/104536898/233248514-0014cc76-d947-4fe1-a30e-df5b989bd63d.png)
+
 
 #### Part b: The two most and least correlated images 
 
-insert 2 images
+![most_correlated](https://user-images.githubusercontent.com/104536898/233248419-26b13c27-57bc-4c64-bf37-5693f192c0ca.png)
+![least_correlated](https://user-images.githubusercontent.com/104536898/233248402-65a06995-3855-4e2e-968c-db9881c475c7.png)
 
 #### Part c: The correlation matrix between the 10 images in matrix X [1, 313, 512, 5, 2400, 113, 1024, 87, 314, 2005]. 
 
-insert 1 image 
+![C_matrix_10](https://user-images.githubusercontent.com/104536898/233248351-efaca886-3603-4eaf-837c-40aa6ea0bd93.png)
+
 
 #### Part d: The first six eigenvectors with the largest magnitude eigenvalue of matrix Y 
 
@@ -259,17 +255,7 @@ Mode 6: 0.59%
 Total percentage of variance captured by the first six modes: 93.885337%
 ```
 
-insert 1 image 
-
-
-
-
-
-
-
-
-
-
+![eigenfaces](https://user-images.githubusercontent.com/104536898/233248124-c9635531-f366-4acc-a778-b07691fbe9e4.png)
 
 ## Conclusion
 
