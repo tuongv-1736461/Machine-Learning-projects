@@ -245,11 +245,15 @@ print(f"Accuracy: {acc}")
 
 ## Results
 #### SVD analysis
-[image 1]
+![download1](https://user-images.githubusercontent.com/104536898/234855177-fb38a100-558c-4a01-98ea-1ad9fef9b317.png)
+
 The total percentage of variance captured by the first 50 modes is 89.528712
-[image 2]
-[image 3]
-[image 4]
+
+![download2](https://user-images.githubusercontent.com/104536898/234855236-6d945abb-d7cb-42f5-85ba-652f247f8b00.png)
+
+![download3](https://user-images.githubusercontent.com/104536898/234855273-496e20b5-5c94-4d6b-8667-0b98aa5a817b.png)
+
+![download4](https://user-images.githubusercontent.com/104536898/234855344-f5412b5b-977c-4f4c-a50a-234a8370b3e9.png)
 
 #### Classification Techniques and Performance Evaluation
 We tested three different classifiers, LDA, SVM, and decision tree, on all digit pairs. The results are shown in the table below.
