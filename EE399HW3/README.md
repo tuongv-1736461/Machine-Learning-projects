@@ -1,5 +1,5 @@
 
-# Exploring MNIST with SVD and Machine Learning: LDA, SVM, and Decision Trees
+# An Analysis of MNIST Dataset Using SVD and Supervised Learning Techniques: LDA, SVM, and Decision Trees
 
 
 
