@@ -393,12 +393,25 @@ print("ESN:", esn_avg_test_loss)
 ## Result
 
 #### Generate training and testing data using Lorenz equation
-
+![p10](https://github.com/tuongv-1736461/EE399/blob/main/EE399HW5/p=10.png)
+![p28](https://github.com/tuongv-1736461/EE399/blob/main/EE399HW5/p=28.png)
+![p40](https://github.com/tuongv-1736461/EE399/blob/main/EE399HW5/p=40.png)
+![p17](https://github.com/tuongv-1736461/EE399/blob/main/EE399HW5/p=17.png)
+![p35](https://github.com/tuongv-1736461/EE399/blob/main/EE399HW5/p=35.png)
 
 #### Comparison of FNN, LSTM, RNN, and ESN models on Lorenz-generated data 
 
 When comparing the FNN, LSTM, RNN, and ESN models on the Lorenz-generated data based on the average testing loss and training loss from 10 runs, we observe the following results:
-
+![run1](https://github.com/tuongv-1736461/EE399/blob/main/EE399HW5/run1.png)
+![run2](https://github.com/tuongv-1736461/EE399/blob/main/EE399HW5/run2.png)
+![run3](https://github.com/tuongv-1736461/EE399/blob/main/EE399HW5/run3.png)
+![run4](https://github.com/tuongv-1736461/EE399/blob/main/EE399HW5/run4.png)
+![run5](https://github.com/tuongv-1736461/EE399/blob/main/EE399HW5/run5.png)
+![run6](https://github.com/tuongv-1736461/EE399/blob/main/EE399HW5/run6.png)
+![run7](https://github.com/tuongv-1736461/EE399/blob/main/EE399HW5/run7.png)
+![run8](https://github.com/tuongv-1736461/EE399/blob/main/EE399HW5/run8.png)
+![run9](https://github.com/tuongv-1736461/EE399/blob/main/EE399HW5/run9.png)
+![run10](https://github.com/tuongv-1736461/EE399/blob/main/EE399HW5/run10.png)
 | Model | Average Training Loss | Variability of Training Loss | Average Testing Loss |
 |-------|----------------------|---------------------|----------------------|
 | FNN   | 8.7655               | 0.0000                | 7.5274               |
