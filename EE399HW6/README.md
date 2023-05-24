@@ -268,21 +268,21 @@ plt.show()
 ```
 Test Error: 0.034932088
 ```
-"Visualization for noise free-training image" 
+![nonoise_visual](https://github.com/tuongv-1736461/EE399/blob/main/EE399HW6/nonoise_visual.png)
 ### SHRED model in reconstructing the images with added noise during training
-"error vs noise" 
+![error_vs_noise](https://github.com/tuongv-1736461/EE399/blob/main/EE399HW6/error_vs_noise.png)
 
 From the graph, we can observe that there is no clear correlation between the noise standard deviation and the test error. The test error values fluctuate within a narrow range (0.0335 to 0.0365) regardless of the noise standard deviation. This suggests that the model's performance is relatively stable and not significantly influenced by the amount of noise in the input data.
 
 Comparing the test error of noise-free training (0.0349) to the test error of noise-added training, we see no significant difference. Both errors fall within the same range, indicating that the added noise during training does not provide substantial benefits in terms of reducing the test error.
 
-"Visualization with added noise"
+![noise_visualization](https://github.com/tuongv-1736461/EE399/blob/main/EE399HW6/noise_visualization.png)
 ### Performance as a function of the number of lags
-"error vs lag"
+![error_vs_lag](https://github.com/tuongv-1736461/EE399/blob/main/EE399HW6/error_vs_lag.png)
 
 The MSE errors do not exhibit a clear relationship with the lag values, such as a consistent increase or decrease, it suggests that the lag value may not have a strong influence on the model's performance.
 ### Performance as a function of the number of sensors
-"error vs sensor"
+![error_vs_sensor](https://github.com/tuongv-1736461/EE399/blob/main/EE399HW6/error_vs_sensor.png)
 
 From the graph, we can observe a decreasing trend in the MSE error as the number of sensors increases. This indicates that increasing the number of sensors leads to improved reconstruction accuracy. The availability of more spatial information allows the SHRED model to capture finer details and patterns in the data, resulting in reduced error in the reconstructed images.
 
