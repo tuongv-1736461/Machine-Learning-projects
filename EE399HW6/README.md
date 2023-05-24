@@ -1,5 +1,5 @@
 
-# Analysis of Sea-Surface Temperature using Shallow Recurrent Decoder models: Performance Evaluation based on Time Lag, Noise, and Number of Sensors
+# Analysis of Sea-Surface Temperature using Shallow Recurrent Decoder model: Performance Evaluation based on Time Lag, Noise, and Number of Sensors
 
 ## Author
 - [Jenny Van](https://github.com/tuongv-1736461)
