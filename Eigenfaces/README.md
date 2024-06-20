@@ -2,7 +2,7 @@
 # Application of Machine Learning: Eigenfaces
 
 ## Abstract:
-In this assignment, we work with a dataset of 2414 grayscale images of 39 different faces, each downsampled to 32x32 pixels and stored as columns in a matrix X of size 1024x2414. We perform various operations on the dataset, including computing correlation matrices, finding eigenvectors and principal component directions, and calculating the percentage of variance captured by the first six SVD modes. By analyzing the correlation matrices, we identify the most and least correlated images. Additionally, we obtain the eigenfaces which capture the most significant variations in the dataset. This assignment provides an introduction to applications of machine learning in facial recognition.
+In this project, we work with a dataset of 2414 grayscale images of 39 different faces, each downsampled to 32x32 pixels and stored as columns in a matrix X of size 1024x2414. We perform various operations on the dataset, including computing correlation matrices, finding eigenvectors and principal component directions, and calculating the percentage of variance captured by the first six SVD modes. By analyzing the correlation matrices, we identify the most and least correlated images. Additionally, we obtain the eigenfaces which capture the most significant variations in the dataset. This project provides an introduction to applications of machine learning in facial recognition.
 
 
 ## Author
@@ -15,7 +15,7 @@ We will begin by computing a correlation matrix of the first 100 images in X and
 
 Next, we will compute a 10x10 correlation matrix between images and plot it. We will also create a matrix Y=XX^T and find the first six eigenvectors with the largest magnitude eigenvalue. Additionally, we will perform SVD on matrix X and find the first six principal component directions. We will compare the first eigenvector from the eigenvectors with the first SVD mode and compute the norm of their absolute values.
 
-Finally, we will compute the percentage of variance captured by each of the first six SVD modes and plot the first six SVD modes. Through this assignment, we aim to gain a deeper understanding of the dataset and develop skills in computing correlation matrices, finding eigenvectors and principal component directions, and calculating the percentage of variance captured by SVD modes.
+Finally, we will compute the percentage of variance captured by each of the first six SVD modes and plot the first six SVD modes. Through this project, we aim to gain a deeper understanding of the dataset and develop skills in computing correlation matrices, finding eigenvectors and principal component directions, and calculating the percentage of variance captured by SVD modes.
 
 ## Theoretical Background:
 
@@ -41,7 +41,7 @@ results=loadmat('yalefaces.mat')
 X=results['X'] 
 ```
 #### Part a: The correlation matrix between the first 100 images in matrix X 
-Part (a) of the assignment involves computing a 100x100 correlation matrix C by computing the dot product (correlation) between the first 100 images in the matrix X. The code does this by extracting the first 100 columns of X and then computing their dot product (correlation) to get the 100x100 correlation matrix C. The code then plots the correlation matrix using the imshow function from the matplotlib.pyplot library. 
+Part (a) of the project involves computing a 100x100 correlation matrix C by computing the dot product (correlation) between the first 100 images in the matrix X. The code does this by extracting the first 100 columns of X and then computing their dot product (correlation) to get the 100x100 correlation matrix C. The code then plots the correlation matrix using the imshow function from the matplotlib.pyplot library. 
 ```
 # extract the first 100 columns of X
 X_100 = X[:, :100]
@@ -56,7 +56,7 @@ plt.title("Correlation matrix of the first 100 columns of X")
 plt.show()
 ```
 #### Part b: The two most and least correlated images 
-Part (b) of the assignment requires identifying the two most highly correlated images and the two most uncorrelated images from the correlation matrix computed in part (a), and plotting these images. 
+Part (b) of the project requires identifying the two most highly correlated images and the two most uncorrelated images from the correlation matrix computed in part (a), and plotting these images. 
 
 To find the most highly correlated images, the code creates a copy of the correlation matrix C called C_copy, sets the diagonal elements to 0, and finds the location of the maximum value in the matrix using np.argmax(). 
 ```
@@ -260,7 +260,7 @@ Total percentage of variance captured by the first six modes: 93.885337%
 
 #### Correlation matrix
 
-This assignment demonstrated how the correlation matrix can be used to analyze relationships among images. The plots of the correlation matrix in parts a and c revealed that the diagonal elements corresponded to the variance measures and were represented by the lightest color, whereas off-diagonal values were darker, indicating lower correlation. In part b, we used the correlation matrix to identify the most and least correlated images. Specifically, the image pairs with the highest and lowest correlation values were found by examining the maximum and minimum off-diagonal elements of the correlation matrix. These results demonstrate the usefulness of the correlation matrix for exploring relationships between variables in complex datasets.
+This project demonstrated how the correlation matrix can be used to analyze relationships among images. The plots of the correlation matrix in parts a and c revealed that the diagonal elements corresponded to the variance measures and were represented by the lightest color, whereas off-diagonal values were darker, indicating lower correlation. In part b, we used the correlation matrix to identify the most and least correlated images. Specifically, the image pairs with the highest and lowest correlation values were found by examining the maximum and minimum off-diagonal elements of the correlation matrix. These results demonstrate the usefulness of the correlation matrix for exploring relationships between variables in complex datasets.
 
 #### Comparison of Eigenvectors and Principal Component Directions 
 The results obtained from part (d) and part (e) indicate that the first six eigenvectors with the largest magnitude eigenvalue of the matrix Y = X*X.T are equivalent to the first six principal component directions of the SVD of the matrix X. This was confirmed by comparing the output and computing the norm of difference of the absolute values between the eigenvector with the largest magnitude eigenvalue and the first principal component directions of the SVD of the matrix X. The similarity between the two sets of vectors suggests that they capture the same underlying structure in the data. This observation is consistent with the theory of principal component analysis, which states that the eigenvectors of the covariance matrix (in this case, Y) correspond to the principal axes of variation in the data, while the SVD provides an alternative method for computing these vectors. 
