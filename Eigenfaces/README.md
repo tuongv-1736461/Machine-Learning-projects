@@ -21,7 +21,7 @@ Finally, we will compute the percentage of variance captured by each of the firs
 
 Correlation matrix:
 
-A correlation matrix is a square matrix that shows the pairwise correlations between variables. In this homework, we compute the correlation matrix between the first 100 images of the dataset by computing the dot product (correlation) between each pair of images. The diagonal of the correlation matrix contains the variance measures of each image, while the off-diagonal elements are symmetric and represent the covariance between all pairs. A small covariance value indicates that the pair of images are statistically independent, while a large covariance value indicates that they are dependent, and the data may be redundant. By examining the off-diagonal values, we can identify the most and least correlated images in the dataset.
+A correlation matrix is a square matrix that shows the pairwise correlations between variables. In this project, we compute the correlation matrix between the first 100 images of the dataset by computing the dot product (correlation) between each pair of images. The diagonal of the correlation matrix contains the variance measures of each image, while the off-diagonal elements are symmetric and represent the covariance between all pairs. A small covariance value indicates that the pair of images are statistically independent, while a large covariance value indicates that they are dependent, and the data may be redundant. By examining the off-diagonal values, we can identify the most and least correlated images in the dataset.
 
 Eigendecomposition of AA.T:
 
