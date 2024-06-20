@@ -245,15 +245,15 @@ print(f"Accuracy: {acc}")
 
 ## Results
 #### SVD analysis
-![download1](https://github.com/tuongv-1736461/EE399/blob/main/EE399HW3/download1.png)
+![download1](https://github.com/tuongv-1736461/Machine-Learning-projects/blob/main/SVM_and_ClassificationTechniques/download1.png)
 
 The total percentage of variance captured by the first 50 modes is 89.528712
 
-![download2](https://github.com/tuongv-1736461/EE399/blob/main/EE399HW3/download2.png)
+![download2](https://github.com/tuongv-1736461/Machine-Learning-projects/blob/main/SVM_and_ClassificationTechniques/download2.png)
 
-![download3](https://github.com/tuongv-1736461/EE399/blob/main/EE399HW3/download3.png)
+![download3](https://github.com/tuongv-1736461/Machine-Learning-projects/blob/main/SVM_and_ClassificationTechniques/download3.png)
 
-![download4](https://github.com/tuongv-1736461/EE399/blob/main/EE399HW3/download4.png)
+![download4](https://github.com/tuongv-1736461/Machine-Learning-projects/blob/main/SVM_and_ClassificationTechniques/download4.png)
 
 #### Classification Techniques and Performance Evaluation
 We tested three different classifiers, LDA, SVM, and decision tree, on all digit pairs. The results are shown in the table below.
