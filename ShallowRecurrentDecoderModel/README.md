@@ -36,25 +36,6 @@ SHRED integrates:
   - **Time lags**: Number of previous time steps used.
   - **Sensor counts**: Number of sensors sampled from the spatial field.
 
-### Model Training
-
-The training process is encapsulated in a function called `run_shred()`:
-
-1. **Initialization**  
-   The function randomly selects sensor locations and splits the data into input (past sensor readings) and output (ground truth temperature field at the final timestep).
-
-2. **Dataset Creation**  
-   Custom PyTorch datasets are created for training, validation, and testing. These datasets package the input sequences and expected outputs into mini-batches for efficient learning.
-
-3. **Model Instantiation**  
-   A SHRED model is instantiated with specified hyperparameters such as hidden layer size, number of layers, dropout rate, etc.
-
-4. **Training**  
-   The model is trained using the training and validation datasets with early stopping to prevent overfitting. The optimization minimizes the mean squared error (MSE) between predicted and actual SST fields.
-
-5. **Evaluation**  
-   The trained model is tested on the unseen test set. It outputs reconstructed SST fields, and the final test error (MSE) is computed to quantify accuracy.
-
 ## Experiments
 
 To evaluate the SHRED model’s performance, we conducted a series of experiments that tested its robustness across three key dimensions: noise, time lag, and number of sensors. These scenarios mimic real-world conditions such as noisy sensor data, sparse sensor networks, and limited historical records.
