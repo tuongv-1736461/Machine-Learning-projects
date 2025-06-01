@@ -16,25 +16,56 @@ This study evaluates SHRED’s performance using the NOAA Optimum Interpolation 
 
 ## Methodology
 
+This section explains how the SHRED model works, how the data was prepared, and how experiments were conducted to evaluate model performance.
+
 ### SHRED Overview
 
-SHRED integrates:
-- **LSTM network**: Captures temporal dependencies from time-lagged sensor sequences.
-- **Shallow decoder**: Reconstructs the full spatio-temporal SST field from the LSTM output.
+SHRED (SHallow REcurrent Decoder) is a hybrid neural network architecture designed to reconstruct high-dimensional spatio-temporal data from a limited number of sensors. It is composed of two main components:
+
+- **LSTM (Long Short-Term Memory) Network**: A special kind of recurrent neural network (RNN) that can learn long-term dependencies in sequential data. In this project, it processes sequences of sensor readings over multiple past time steps (known as “lags”) to understand the temporal evolution of sea-surface temperature (SST).
+
+- **Shallow Decoder**: A simple feedforward neural network that takes the encoded temporal features from the LSTM and reconstructs the entire spatial SST map. This decoder acts as a bridge from the low-dimensional temporal representation to the high-dimensional spatial domain.
+
+Together, these components allow the SHRED model to “fill in the blanks” and reconstruct complete temperature fields from just a few spatial measurements taken over time.
 
 ### Data Preprocessing
 
-- SST data is normalized using `MinMaxScaler`.
-- Input sequences are generated for each time window using randomly selected sensor locations.
-- Data is split into training, validation, and test sets.
+To train the SHRED model, the raw SST data undergoes several preprocessing steps:
+
+1. **Normalization**  
+   The data is scaled using `MinMaxScaler` from scikit-learn. This transformation brings all values into the same range (typically between 0 and 1), which speeds up and stabilizes neural network training.
+
+2. **Sensor Sampling**  
+   For each experiment, a small number of sensor locations (e.g., 3, 5, or 10) are randomly selected. These sensors provide partial observations of the SST field. Only data from these locations is used as input to the model.
+
+3. **Time Lagging**  
+   The model uses information from multiple past time steps to make predictions. A “lag” of 52, for example, means that 52 previous observations from each sensor are fed into the model to help it understand the current state.
+
+4. **Dataset Splitting**  
+   The dataset is divided into three parts:
+   - **Training set**: Used to fit the model’s parameters.
+   - **Validation set**: Used to tune hyperparameters and prevent overfitting.
+   - **Test set**: Used to evaluate the final performance of the trained model.
+
 
 ### Model Training
 
-- The `run_shred()` function initializes sensor placement, creates input/output datasets, trains the SHRED model using PyTorch, and evaluates reconstruction accuracy via mean squared error (MSE).
-- Experiments were conducted with varying:
-  - **Noise levels**: Gaussian noise added to input data.
-  - **Time lags**: Number of previous time steps used.
-  - **Sensor counts**: Number of sensors sampled from the spatial field.
+The training process is encapsulated in a function called `run_shred()`:
+
+1. **Initialization**  
+   The function randomly selects sensor locations and splits the data into input (past sensor readings) and output (ground truth temperature field at the final timestep).
+
+2. **Dataset Creation**  
+   Custom PyTorch datasets are created for training, validation, and testing. These datasets package the input sequences and expected outputs into mini-batches for efficient learning.
+
+3. **Model Instantiation**  
+   A SHRED model is instantiated with specified hyperparameters such as hidden layer size, number of layers, dropout rate, etc.
+
+4. **Training**  
+   The model is trained using the training and validation datasets with early stopping to prevent overfitting. The optimization minimizes the mean squared error (MSE) between predicted and actual SST fields.
+
+5. **Evaluation**  
+   The trained model is tested on the unseen test set. It outputs reconstructed SST fields, and the final test error (MSE) is computed to quantify accuracy.
 
 ## Experiments
 
