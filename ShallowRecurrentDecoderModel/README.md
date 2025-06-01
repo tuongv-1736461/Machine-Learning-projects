@@ -38,43 +38,68 @@ SHRED integrates:
 
 ## Experiments
 
+To evaluate the SHRED model’s performance, we conducted a series of experiments that tested its robustness across three key dimensions: noise, time lag, and number of sensors. These scenarios mimic real-world conditions such as noisy sensor data, sparse sensor networks, and limited historical records.
+
 ### 1. Noise-Free Training
+
+In this baseline experiment, the SHRED model was trained on clean SST data without any added noise.
 
 ```python
 mse, recons, truth = run_shred(num_sensors=3, lags=52)
 ```
-**Test Error:** 0.0349  
+
+- **Setup**: 3 sensors, 52 time lags  
+- **Test Error (MSE)**: 0.0349
+
+The model accurately reconstructed global SST fields from minimal input data.
+
 ![nonoise_visual](https://github.com/tuongv-1736461/Machine-Learning-projects/blob/main/ShallowRecurrentDecoderModel/nonoise_visual.png)
 
 ### 2. Performance Under Gaussian Noise
 
-Noise was added to sensor data with standard deviation ranging from 0.0 to 0.5. Despite noise, test error remained stable.
+To assess robustness to sensor error, we added Gaussian noise to the input data with standard deviation ranging from 0.0 to 0.5.
+
+- **Setup**: 3 sensors, 52 lags  
+- **Result**: MSE remained stable (approx. 0.0335–0.0365) across noise levels.
 
 ![error_vs_noise](https://github.com/tuongv-1736461/Machine-Learning-projects/blob/main/ShallowRecurrentDecoderModel/error_vs_noise.png)
 
-> Insight: SHRED is resilient to input noise, maintaining consistent accuracy.
+> **Insight**: SHRED is highly robust to noisy inputs, making it suitable for real-world scenarios with imperfect sensor data.
 
 ![noise_visualization](https://github.com/tuongv-1736461/Machine-Learning-projects/blob/main/ShallowRecurrentDecoderModel/noise_visualization.png)
 
+*This image shows the visual output of the SHRED model when trained with noisy input data. Despite the added Gaussian noise, spatial structures are preserved, indicating strong robustness.*
+
 ### 3. Performance vs Time Lag
+
+This experiment varied the number of historical time steps (lags) given to the model to evaluate its sensitivity to temporal context.
 
 ```python
 lag_val = [13, 32, 52, 71, 91, 110, 130, 149, 169, 188]
 ```
 
+- **Setup**: 3 sensors, variable lag lengths  
+- **Result**: No clear correlation between lag length and performance was observed.
+
 ![error_vs_lag](https://github.com/tuongv-1736461/Machine-Learning-projects/blob/main/ShallowRecurrentDecoderModel/error_vs_lag.png)
 
-> Insight: MSE does not vary significantly with lag, indicating robustness to temporal history length.
+> **Insight**: SHRED can perform reliably with short to moderate lag histories. This makes it computationally efficient without requiring long-term temporal data.
 
 ### 4. Performance vs Number of Sensors
+
+This experiment tested the impact of increasing spatial input (number of sensors) on reconstruction accuracy.
 
 ```python
 sensor_num = [1, 3, 5, 7, 9, 11, 13, 15, 17, 20]
 ```
 
+- **Setup**: 52 lags, sensor count ranging from 1 to 20  
+- **Result**: As the number of sensors increased, MSE consistently decreased.
+
 ![error_vs_sensor](https://github.com/tuongv-1736461/Machine-Learning-projects/blob/main/ShallowRecurrentDecoderModel/error_vs_sensor.png)
 
-> Insight: Increasing the number of sensors consistently reduces reconstruction error, confirming that more spatial input improves accuracy.
+> **Insight**: More spatial information leads to better reconstructions. However, SHRED still performs well with just a few sensors, making it cost-effective for sparse deployments.
+
 
 ## Conclusion
 
