@@ -134,7 +134,7 @@ python shred_eval.py
 
 This project builds on the SHRED (SHallow REcurrent Decoder) framework introduced in the paper:  
 **"Sensing with Shallow Recurrent Decoder Networks"** by Jan P. Williams, Olivia Zahn, and J. Nathan Kutz.  
-[Read the paper on arXiv](https://arxiv.org/abs/2209.07550)
+[Read the paper on arXiv](https://arxiv.org/abs/2301.12011)
 
 SHRED models learn mappings from sparse sensor measurement trajectories to high-dimensional spatio-temporal states.  
 The datasets used in this project include:
